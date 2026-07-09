@@ -13,16 +13,11 @@ export default function App() {
             <Nav/>
             <main>
                 <Routes>
-                    <Route path="/" element={
-                        <Home/>}/>
-                    <Route path="/about" element={
-                        <About/>}/>
-                    <Route path="/gallery" element={
-                        <Gallery/>}/>
-                    <Route path="/testimonials" element={
-                        <Testimonials/>}/>
-                    <Route path="/mission" element={
-                        <Mission/>}/>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/gallery" element={<Gallery/>}/>
+                    <Route path="/testimonials" element={<Testimonials/>}/>
+                    <Route path="/mission" element={<Mission/>}/>
                 </Routes>
             </main>
             <Footer/>

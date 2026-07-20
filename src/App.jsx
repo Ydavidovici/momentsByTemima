@@ -5,7 +5,6 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
-import Mission from "./pages/Mission.jsx";
 
 export default function App() {
     return (
@@ -17,7 +16,6 @@ export default function App() {
                     <Route path="/about" element={<About/>}/>
                     <Route path="/gallery" element={<Gallery/>}/>
                     <Route path="/testimonials" element={<Testimonials/>}/>
-                    <Route path="/mission" element={<Mission/>}/>
                 </Routes>
             </main>
             <Footer/>

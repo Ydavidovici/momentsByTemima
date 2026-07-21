@@ -116,7 +116,7 @@ img {
     /* script fonts sit small — nudge the size up for balance */
     font-size: 1.35em;
     line-height: 1;
-    margin-left: 0.15em;
+    margin-right: 0.15em;
 }
 
 .nav__links {

@@ -107,16 +107,27 @@ img {
     font-weight: 600;
 }
 
-/* brand wordmark: "Moments" (serif) + "by Temima" (script) --------- */
+/* brand wordmark: supplied logo image -------------------------------- */
 
-.brand__script {
-    font-family: var(--font-script);
-    font-weight: 400;
-    color: var(--accent);
-    /* script fonts sit small — nudge the size up for balance */
-    font-size: 1.35em;
-    line-height: 1;
-    margin-right: 0.15em;
+.brand__logo {
+    display: block;
+    height: auto;
+}
+
+.nav__brand .brand__logo {
+    height: 2.2rem;
+    width: auto;
+}
+
+.hero h1 {
+    /* h1 only carries the logo image now — drop its text-sized spacing */
+    margin: 0;
+    line-height: 0;
+}
+
+.hero .brand__logo {
+    width: min(440px, 82vw);
+    margin: 0 auto 1.5rem;
 }
 
 .nav__links {

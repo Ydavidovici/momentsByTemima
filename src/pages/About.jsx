@@ -3,14 +3,20 @@ export default function About() {
         <section className="page">
             <h1>About Me</h1>
             <p className="page__intro">
-                Hi, I'm Temima. I'm drawn to the in-between moments — the quiet glance,
-                the burst of laughter, the golden hour hush. My work is about noticing
-                those things and holding onto them.
-            </p>
-            <p className="page__intro">
-                {/* Replace this placeholder copy with Temima's real story. */}
-                This is placeholder text for the About page. Share your background, your
-                approach, and what draws you to photography here.
+                <p>
+                    Hi, I’m Temima!
+                </p>
+                <p>
+                    I’m so happy you’re here, and I would absolutely love the opportunity to work with you!
+                </p>
+                <p>
+                    I believe there’s something so special about capturing the beautiful moments in life—the ones you never want to let pass by.
+                    Whether it’s a big celebration, a milestone, or a quiet, intimate moment with your family, these memories deserve to be cherished and preserved for years to come.
+                </p>
+                <p>
+                    My goal is to capture those meaningful moments in a way that allows you to relive them again and again.
+                    I want every experience to feel personal, comfortable, and enjoyable, while making sure each and every client leaves feeling happy and truly satisfied with their memories.
+                </p>
             </p>
         </section>
     );

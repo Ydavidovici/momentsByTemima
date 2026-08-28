@@ -1,17 +1,12 @@
 import {useEffect, useState} from "react";
 
-// Auto-advancing, cross-fading slideshow for the home page.
-//
-// Each slide is either a real photo ({src, alt}) or a tinted placeholder
-// ({tint, label}) — same pattern as the Gallery page, so real images drop
-// straight in once they exist. Swap this list for a CMS/JSON feed later
-// (see designDoc.md — "Future Considerations").
 const slides = [
-    {tint: "var(--blush)", label: "Golden hour"},
-    {tint: "var(--sky)", label: "First dance"},
-    {tint: "var(--sage)", label: "Quiet morning"},
-    {tint: "var(--cream-deep)", label: "Little hands"},
-    {tint: "var(--sky)", label: "Sun & lace"},
+    {src: "/slide-1.png", alt: "Golden hour"},
+    {src: "/slide-2.jpg", alt: "First dance"},
+    {src: "/slide-4.jpg", alt: "Little hands"},
+    {src: "/slide-5.jfif", alt: "Sun & lace"},
+    {src: "/slide-8.jpg", alt: "Shlomo photo 3"},
+    {src: "/slide-9.jpg", alt: "Miscellaneous photo"},
 ];
 
 const INTERVAL_MS = 4000;
@@ -23,6 +18,7 @@ export default function Slideshow() {
         const id = setInterval(() => {
             setCurrent((i) => (i + 1) % slides.length);
         }, INTERVAL_MS);
+
         return () => clearInterval(id);
     }, []);
 
@@ -37,7 +33,7 @@ export default function Slideshow() {
                         aria-hidden={i === current ? undefined : true}
                     >
                         {slide.src ? (
-                            <img src={slide.src} alt={slide.alt ?? ""}/>
+                            <img src={slide.src} alt={slide.alt ?? ""} style={slide.position ? {objectPosition: slide.position} : undefined}/>
                         ) : (
                             <figcaption className="slideshow__label">{slide.label}</figcaption>
                         )}

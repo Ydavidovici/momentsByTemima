@@ -1,0 +1,11 @@
+/* Earthy Palette */
+:root {
+    --cream: #f4ebd8; /* Lighter version of the tan for the main background */
+    --cream-deep: #c0b298; /* Tan / Beige */
+    --ink: #403024; /* Dark Brown / Charcoal */
+    --ink-soft: #8f5c38; /* Warm Brown */
+    --blush: #c89259; /* Caramel / Camel */
+    --sky: #8b9068; /* Sage / Olive Green */
+    --sage: #c0b298; /* Tan / Beige */
+    --accent: #8b9068; /* Sage / Olive Green */
+}

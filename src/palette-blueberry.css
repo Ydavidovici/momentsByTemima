@@ -1,0 +1,11 @@
+/* BLUE berry Palette */
+:root {
+    --cream: #f7f9fb; /* Very subtle icy white for main background */
+    --cream-deep: #E6E6E6; /* Light gray */
+    --ink: #3b4b57; /* Darkened slate blue for readable body text */
+    --ink-soft: #75909C; /* Slate blue */
+    --blush: #DEE6E9; /* Very light icy blue */
+    --sky: #9FB5C4; /* Light slate blue */
+    --sage: #CBD5D8; /* Pale cool gray */
+    --accent: #75909C; /* Slate blue */
+}

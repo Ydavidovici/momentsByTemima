@@ -1,10 +1,3 @@
-/*
-  Moments by Temima — theme
-  Design brief: "light, airy, and happy."
-  Soft cream backgrounds, pastel accents, generous whitespace,
-  serif headings + clean sans body.
-*/
-
 :root {
     --cream: #fdfaf5;
     --cream-deep: #f6efe6;
@@ -70,8 +63,6 @@ img {
     display: block;
 }
 
-/* layout ------------------------------------------------------------ */
-
 .page {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -83,8 +74,6 @@ img {
     color: var(--ink-soft);
     font-size: 1.1rem;
 }
-
-/* nav --------------------------------------------------------------- */
 
 .nav {
     position: sticky;
@@ -107,8 +96,6 @@ img {
     font-weight: 600;
 }
 
-/* brand wordmark: supplied logo image -------------------------------- */
-
 .brand__logo {
     display: block;
     height: auto;
@@ -120,7 +107,6 @@ img {
 }
 
 .hero h1 {
-    /* h1 only carries the logo image now — drop its text-sized spacing */
     margin: 0;
     line-height: 0;
 }
@@ -152,8 +138,6 @@ img {
     border-color: var(--accent);
 }
 
-/* hero -------------------------------------------------------------- */
-
 .hero {
     display: grid;
     place-items: center;
@@ -169,8 +153,6 @@ img {
     color: var(--ink-soft);
     font-size: 1.15rem;
 }
-
-/* buttons ----------------------------------------------------------- */
 
 .btn {
     display: inline-block;
@@ -188,8 +170,6 @@ img {
     opacity: 0.92;
 }
 
-/* slideshow --------------------------------------------------------- */
-
 .slideshow {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -198,11 +178,11 @@ img {
 
 .slideshow__stage {
     position: relative;
-    aspect-ratio: 4 / 3;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(74, 64, 56, 0.12);
     background: var(--cream-deep);
+    transition: aspect-ratio 0.8s ease, width 0.8s ease, height 0.8s ease;
 }
 
 .slideshow__slide {
@@ -222,9 +202,7 @@ img {
 }
 
 .slideshow__slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* controlled inline by React to accommodate background blur trick */
 }
 
 .slideshow__label {
@@ -266,8 +244,6 @@ img {
     }
 }
 
-/* gallery ----------------------------------------------------------- */
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -297,8 +273,6 @@ img {
     box-shadow: 0 12px 24px rgba(74, 64, 56, 0.15);
     outline: none;
 }
-
-/* testimonials ------------------------------------------------------ */
 
 .testimonials {
     display: grid;

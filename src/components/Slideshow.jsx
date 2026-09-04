@@ -28,7 +28,7 @@ export default function Slideshow() {
                 className="slideshow__stage" 
                 style={{ 
                     aspectRatio: slides[current].ratio,
-                    width: `min(100%, 65vh * ${slides[current].ratio})`,
+                    width: `min(100%, 85vh * ${slides[current].ratio})`,
                     margin: "0 auto"
                 }}
             >

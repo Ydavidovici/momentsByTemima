@@ -2,8 +2,8 @@
 const testimonials = [
     {
         id: 1,
-        quote: "Temima has a very easy-going and creative nature, which made working with her a pleasure. Our vision truly came alive under her guidance and skill; we will cherish the photos forever! - Chaya and Shmueli Cohn",
-        author: "A happy client",
+        quote: "Temima has a very easy-going and creative nature, which made working with her a pleasure. Our vision truly came alive under her guidance and skill; we will cherish the photos forever!",
+        author: "Chaya and Shmueli Cohn",
     },
     {
         id: 2,

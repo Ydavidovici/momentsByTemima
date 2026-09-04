@@ -2,7 +2,7 @@
 const testimonials = [
     {
         id: 1,
-        quote: "Temima captured our day exactly as it felt — warm, joyful, and real.",
+        quote: "Temima has a very easy-going and creative nature, which made working with her a pleasure. Our vision truly came alive under her guidance and skill; we will cherish the photos forever! - Chaya and Shmueli Cohn",
         author: "A happy client",
     },
     {

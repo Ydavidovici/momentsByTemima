@@ -21,16 +21,6 @@ export default function Home() {
             <section className="page page--slideshow">
                 <Slideshow/>
             </section>
-
-            <section className="page">
-                <h2>Hello, and welcome</h2>
-                <p className="page__intro">
-                    This is a warm, quiet corner of the internet dedicated to capturing
-                    moments as they truly feel — soft, honest, and full of light. Take a
-                    look around, read a few kind words from past clients, and get to know
-                    the person behind the lens.
-                </p>
-            </section>
         </>
     );
 }

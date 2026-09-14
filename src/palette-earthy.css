@@ -1,11 +1,11 @@
 /* Earthy Palette */
 :root {
-    --cream: #f4ebd8; /* Lighter version of the tan for the main background */
-    --cream-deep: #c0b298; /* Tan / Beige */
-    --ink: #403024; /* Dark Brown / Charcoal */
-    --ink-soft: #8f5c38; /* Warm Brown */
-    --blush: #c89259; /* Caramel / Camel */
-    --sky: #878a80; /* Gray-green */
-    --sage: #c0b298; /* Tan / Beige */
-    --accent: #878a80; /* Gray-green */
+    --cream: #f6efe1; /* Lighter version of the tan for the main background */
+    --cream-deep: #c1b8aa; /* Tan / Beige */
+    --ink: #48433d; /* Dark Brown / Charcoal */
+    --ink-soft: #857567; /* Warm Brown */
+    --blush: #b89c84; /* Caramel / Camel */
+    --sky: #959891; /* Gray-green */
+    --sage: #b3aea3; /* Tan / Beige */
+    --accent: #959891; /* Gray-green */
 }

@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
 const photos = [
-    {id: 1, src: "/slide-1.png", alt: "Golden hour"},
     {id: 2, src: "/slide-2.jpg", alt: "First dance"},
     {id: 3, src: "/slide-3.jpg", alt: "Quiet morning"},
     {id: 4, src: "/slide-4.jpg", alt: "Little hands"},
@@ -12,7 +11,7 @@ const photos = [
     {id: 9, src: "/slide-9.jpg", alt: "Miscellaneous photo"},
 ];
 
-export default function Gallery() {
+export default function Portfolio() {
     const [selectedPhoto, setSelectedPhoto] = useState(null);
     const dialogRef = useRef(null);
 
@@ -28,7 +27,7 @@ export default function Gallery() {
 
     return (
         <section className="page">
-            <h1>Gallery</h1>
+            <h1>Portfolio</h1>
             <p className="page__intro">
                 A collection of favorite moments.
             </p>

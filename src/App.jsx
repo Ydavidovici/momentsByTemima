@@ -1,11 +1,11 @@
-import {Routes, Route} from "react-router-dom";
-import Nav from "./components/Nav.jsx";
+import {Routes, Route, Navigate} from "react-router-dom";
+import Nav, {links} from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Gallery from "./pages/Gallery.jsx";
-import Testimonials from "./pages/Testimonials.jsx";
-import Contact from "./pages/Contact.jsx";
+
+// The site is a single scrolling page. The old per-page URLs (and /gallery,
+// from before it was renamed) redirect to their section's anchor.
+const legacyPaths = [...links.slice(1).map(({id}) => [id, id]), ["gallery", "portfolio"]];
 
 export default function App() {
     return (
@@ -14,10 +14,10 @@ export default function App() {
             <main>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    <Route path="/gallery" element={<Gallery/>}/>
-                    <Route path="/testimonials" element={<Testimonials/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
+                    {legacyPaths.map(([path, id]) => (
+                        <Route key={path} path={`/${path}`} element={<Navigate to={`/#${id}`} replace/>}/>
+                    ))}
+                    <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>
             <Footer/>

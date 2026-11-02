@@ -7,6 +7,7 @@
     --sky: #dbe8ef;
     --sage: #dfe7d8;
     --accent: #d99a94;
+    --hero-bg: var(--blush);
 
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Nunito Sans', system-ui, -apple-system, sans-serif;
@@ -22,6 +23,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Keeps anchor jumps clear of the sticky nav; Nav.jsx measures it. */
+    scroll-padding-top: var(--nav-height, 4.5rem);
 }
 
 body {
@@ -144,7 +147,11 @@ img {
     text-align: center;
     min-height: 68vh;
     padding: var(--space);
-    background: linear-gradient(160deg, var(--blush) 0%, var(--cream) 45%, var(--sky) 100%);
+    background: var(--hero-bg);
+}
+
+.home-section {
+    border-top: 1px solid var(--cream-deep);
 }
 
 .hero p {
@@ -177,6 +184,8 @@ img {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--space);
+    /* Slideshow.jsx sizes the stage in cqw. */
+    container-type: inline-size;
 }
 
 .slideshow__stage {
@@ -185,7 +194,7 @@ img {
     overflow: hidden;
     box-shadow: 0 12px 40px rgba(74, 64, 56, 0.12);
     background: var(--cream-deep);
-    transition: aspect-ratio 0.8s ease, width 0.8s ease, height 0.8s ease;
+    transition: width 0.8s ease;
 }
 
 .slideshow__slide {
@@ -204,8 +213,15 @@ img {
     pointer-events: auto;
 }
 
-.slideshow__slide img {
-    /* controlled inline by React to accommodate background blur trick */
+.slideshow__backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(24px);
+    transform: scale(1.15);
+    opacity: 0.7;
 }
 
 .slideshow__label {
@@ -242,6 +258,10 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     .slideshow__slide {
         transition: none;
     }

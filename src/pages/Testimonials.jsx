@@ -6,6 +6,11 @@ const testimonials = [
         author: "Chaya and Shmueli Cohn",
     },
     {
+        id: 4,
+        quote: "We had a wonderful experience with Temima for our family photoshoot! She was so patient and great with the kids, and she captured such beautiful moments. We absolutely love how the pictures turned out. Highly recommend her!",
+        author: "TGL",
+    },
+    {
         id: 2,
         quote: "Every photo feels like a memory I get to step back into. Simply magic.",
         author: "Another kind soul",

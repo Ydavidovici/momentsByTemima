@@ -5,7 +5,10 @@ export default function Contact() {
             <p className="page__intro">
                 I would love to hear from you! Please fill out the form below to get in touch.
             </p>
-            <form className="contact-form" action="https://formsubmit.co/temimaedgar@gmail.com" method="POST">
+            <p className="contact-phone">
+                Or call <a href="tel:+17477179328">(747) 717-9328</a>
+            </p>
+            <form className="contact-form" action="https://formsubmit.co/momentsbytemima@gmail.com" method="POST">
                 <label>
                     Name
                     <input type="text" name="name" required />

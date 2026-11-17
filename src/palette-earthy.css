@@ -1,6 +1,6 @@
 /* Earthy Palette */
 :root {
-    --cream: #f6efe1; /* Lighter version of the tan for the main background */
+    --cream: #f3e3dc; /* Soft pastel blush: the one background color for the whole page */
     --cream-deep: #c1b8aa; /* Tan / Beige */
     --ink: #48433d; /* Dark Brown / Charcoal */
     --ink-soft: #857567; /* Warm Brown */
@@ -8,5 +8,4 @@
     --sky: #959891; /* Gray-green */
     --sage: #b3aea3; /* Tan / Beige */
     --accent: #959891; /* Gray-green */
-    --hero-bg: #f3e3dc; /* Soft pastel blush, solid cover-page background */
 }

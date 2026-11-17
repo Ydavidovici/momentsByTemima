@@ -1,8 +1,8 @@
 # Moments by Temima — Client Portal Design Document
 
-> **Status:** Draft / scoping. Nothing here is built yet. Temima's requirements
-> are in (2026-11-02); remaining **Open questions** are at the bottom.
-> Decisions marked **(proposed)** await sign-off.
+> **Status:** Plan approved by Temima (2026-11-17). Nothing here is built yet;
+> remaining **Open questions** are at the bottom. Decisions marked
+> **(proposed)** await our sign-off.
 
 ## Overview
 
@@ -28,8 +28,8 @@ Nothing more than that is necessary."*
 | Access | Anyone with the link may view, as long as nobody can see other clients' photos. |
 | Sender | Links are sent from `momentsbytemima@gmail.com`. |
 | Volume | ~50 photos per shoot; shoots per month vary. |
-| Retention | Depends on cost (see [Costs](#costs)). |
-| Messages | Potential clients can leave a message. **Already exists:** the Contact section's form (FormSubmit). See open question 2. |
+| Retention | Photos are removed automatically after a while (2026-11-17). Length still to set; see open questions. |
+| Messages | Potential clients can leave a message. **Already exists:** the Contact section's form (FormSubmit), now sending to `momentsbytemima@gmail.com`, with her phone number beside it (2026-11-17). |
 | Timing | Temima asked whether a portal is worth it while she's still building the business. See [Build now or wait](#build-now-or-wait). |
 
 ## Goals
@@ -285,7 +285,7 @@ goes to **both** the server logs and Discord.
 | System | db-service, R2, or discord-bot unreachable | error |
 | System | Upload checksum or size mismatch | error |
 | System | Unhandled exception | fatal |
-| System | Retention/cleanup job results (if a retention policy is adopted) | info |
+| System | Retention cleanup job results (deliveries and photos removed) | info |
 
 ### Rules
 
@@ -405,18 +405,17 @@ The portal logs to its own channels, separate from every other DSS app.
 
 ## Open questions
 
-### For Temima (asked 2026-11-02, awaiting reply)
+### Answered by Temima (2026-11-17)
 
-Sent with the plain-language plan, which proposes starting now and building as
-we go.
+She approved the plan, and agreed photos can be removed after a while. Her
+answers on the contact form and phone number were done on the site.
 
-1. **Approval** of the plan.
-2. **Contact form:** the site's form currently sends messages to
-   `temimaedgar@gmail.com`. Should that be `momentsbytemima@gmail.com`?
-   (Also check FormSubmit's first-message confirmation was done.)
-3. **Phone number** in the Contact section?
-4. **Retention:** keep photos until she deletes them, or remove them
-   automatically after a set time?
+### Still to decide
+
+1. **Retention length:** how long until a delivery is removed automatically.
+   Proposed: 1 year after it's sent, with Temima able to keep a delivery longer
+   or remove it sooner. Removal deletes the photos from R2 and logs the result
+   (see the logging table). Confirm the length with Temima.
 
 ### For us (dev)
 
@@ -445,3 +444,4 @@ we go.
 | 2026-11-02 | Each app logs to its own channels: the portal gets its own Discord channels in the same DSS Discord server. |
 | 2026-11-02 | Temima owns the Cloudflare account and pays for R2 directly; we get member access. |
 | 2026-11-02 | The notifier (`notifier.js` / `apiTransport.js`) moves out of jewkiebot into shared code used by both jewkiebot and the portal, instead of being copied. |
+| 2026-11-17 | Temima approved the plan. Photos are removed automatically after a set period (length to confirm; proposed 1 year). |

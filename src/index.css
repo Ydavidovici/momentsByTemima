@@ -7,7 +7,6 @@
     --sky: #dbe8ef;
     --sage: #dfe7d8;
     --accent: #d99a94;
-    --hero-bg: var(--blush);
 
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Nunito Sans', system-ui, -apple-system, sans-serif;
@@ -88,7 +87,7 @@ img {
     justify-content: space-between;
     gap: 1rem;
     padding: 1.1rem var(--space);
-    background: rgba(253, 250, 245, 0.85);
+    background: color-mix(in srgb, var(--cream) 85%, transparent);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--cream-deep);
 }
@@ -147,7 +146,7 @@ img {
     text-align: center;
     min-height: 68vh;
     padding: var(--space);
-    background: var(--hero-bg);
+    /* No background of its own: the page is one solid color top to bottom. */
 }
 
 .home-section {
@@ -425,4 +424,14 @@ img {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent);
+}
+
+.contact-phone {
+    margin: 0;
+    color: var(--ink-soft);
+}
+
+.contact-phone a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
 }

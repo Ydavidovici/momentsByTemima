@@ -345,6 +345,16 @@ storage.
 ## Rollout plan
 
 1. **Phase 0 — Decide:** build now vs. wait; sign off on sending and storage.
+   (Done: Temima approved 2026-11-17.)
+1. **Phase 1A — DSS auth hardening (prerequisite):** users get roles and app
+   scopes (`user_roles` / `user_scopes`); auth-service `/verify` gates on
+   `?scope=` / `?role=`; jewkiebot's nginx requires the `jewkiebot` scope and
+   stops exposing db-service beyond `/api/v1/chess/`. auth-service and
+   db-service stay as folders in `dss` (a split into separate repos was tried
+   and rolled back as unnecessary). One shared auth/db (no staging copies):
+   changes are proven by
+   unit/integration tests and the real-nginx test (`dss/tests/nginx/run.sh`)
+   before they ship, then confirmed by logging in on dev.jewkiebot.dev.
 2. **Phase 1 — Backend:** complete the [setup checklist](#setup-checklist-phase-1)
    (Temima's Cloudflare account, R2 bucket + CORS, Discord channels), then
    db-service tables and portal-service with logging from the start, plus unit
@@ -419,9 +429,12 @@ answers on the contact form and phone number were done on the site.
 
 ### For us (dev)
 
-5. Confirm the `auth-service` + nginx `auth_request` gateway can protect routes
-   on `momentsbytemima.com` / `dev.momentsbytemima.com` (cookie domain, CORS).
-6. Confirm db-service for the two tables (vs. portal-local SQLite).
+5. ~~Confirm the auth-service + nginx `auth_request` gateway can protect the
+   momentsbytemima domains.~~ Yes: same pattern as jewkiebot (Phase 1A), with
+   `/verify?scope=momentsbytemima` and `&role=admin` for admin endpoints.
+   Cookies are host-scoped, so Temima logs in per site.
+6. ~~Confirm db-service for the two tables.~~ Yes: `momentsbytemima_deliveries`
+   and `momentsbytemima_files` in db-service, following its per-app pattern.
 7. Where portal-service runs in compose, and its dev/prod env files.
 8. How the shared notifier reaches each app (decided: one shared copy, see the
    decisions log). App images are built by cloning each app's own repo, so code
@@ -447,3 +460,4 @@ answers on the contact form and phone number were done on the site.
 | 2026-11-17 | Temima approved the plan. Photos are removed automatically after a set period (length to confirm; proposed 1 year). |
 | 2026-11-17 | Before Temima gets a login: DSS users get `roles` (privilege levels, global, several allowed: `admin`, `user`) and `scopes` (which apps they may use), stored in `user_roles` / `user_scopes` link tables in db-service with allowed names in `config/access.php`. Each site's nginx gate calls `/verify?scope=<app>`; admin-only actions also require `role=admin`. db-service is no longer exposed publicly (jewkiebot.dev forwards only `/api/v1/chess/`). Found while reading auth-service/db-service: roles were always empty, and any logged-in DSS account could reach all of db-service. Temima: `roles: ["admin", "user"]`, `scopes: ["momentsbytemima"]`. Per-app roles were considered and deferred; moving to them later needs only a new migration. |
 | 2026-11-17 | portal-service lives in `server/` in the momentsByTemima repo, next to the site. |
+| 2026-11-17 | Phase 1A shipped to production: roles/scopes migration ran, jewkiebot.dev and dev.jewkiebot.dev require the `jewkiebot` scope, db-service is reachable only at `/api/v1/chess/`. Verified by logging in on dev.jewkiebot.dev. auth-service and db-service stay in `dss` (separate repos were tried and dropped). |

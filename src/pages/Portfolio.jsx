@@ -7,8 +7,14 @@ const photos = [
     {id: 5, src: "/slide-5.jfif", alt: "Sun & lace"},
     {id: 6, src: "/slide-6.jpg", alt: "Shlomo photo 1"},
     {id: 7, src: "/slide-7.jpg", alt: "Shlomo photo 2"},
-    {id: 8, src: "/slide-8.jpg", alt: "Shlomo photo 3"},
     {id: 9, src: "/slide-9.jpg", alt: "Miscellaneous photo"},
+    {id: 10, src: "/autumn-family.jpg", alt: "Family portrait in autumn leaves"},
+    {id: 11, src: "/autumn-mother-daughter.jpg", alt: "Mother lifting her daughter by the lake"},
+    {id: 12, src: "/autumn-father-daughter.jpg", alt: "Father and daughter in the autumn woods"},
+    {id: 13, src: "/first-steps.jpg", alt: "First steps"},
+    {id: 14, src: "/autumn-boy.jpg", alt: "Little boy resting by a tree"},
+    {id: 15, src: "/bridal-portrait.jpg", alt: "Bridal portrait"},
+    {id: 16, src: "/getting-ready.jpg", alt: "Getting ready"},
 ];
 
 export default function Portfolio() {

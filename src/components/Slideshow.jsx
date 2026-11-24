@@ -4,7 +4,6 @@ const slides = [
     {src: "/slide-2.jpg", alt: "First dance", ratio: "3219 / 4009"},
     {src: "/slide-4.jpg", alt: "Little hands", ratio: "5387 / 3783"},
     {src: "/slide-5.jfif", alt: "Sun & lace", ratio: "1920 / 2617"},
-    {src: "/slide-8.jpg", alt: "Shlomo photo 3", ratio: "4000 / 6000"},
     {src: "/slide-9.jpg", alt: "Miscellaneous photo", ratio: "905 / 1357"},
 ];
 

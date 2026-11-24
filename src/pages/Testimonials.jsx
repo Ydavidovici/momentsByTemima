@@ -11,6 +11,11 @@ const testimonials = [
         author: "TGL",
     },
     {
+        id: 5, 
+        quote: "Temima was a pleasure to work with! She was amazing with the kids and the photos are stunning!", 
+        author: "SK"
+    },
+    {
         id: 2,
         quote: "Every photo feels like a memory I get to step back into. Simply magic.",
         author: "Another kind soul",

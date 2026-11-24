@@ -15,16 +15,6 @@ const testimonials = [
         quote: "Temima was a pleasure to work with! She was amazing with the kids and the photos are stunning!", 
         author: "SK"
     },
-    {
-        id: 2,
-        quote: "Every photo feels like a memory I get to step back into. Simply magic.",
-        author: "Another kind soul",
-    },
-    {
-        id: 3,
-        quote: "Light, natural, and full of heart. We could not have asked for more.",
-        author: "A grateful family",
-    },
 ];
 
 export default function Testimonials() {

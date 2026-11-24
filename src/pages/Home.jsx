@@ -1,16 +1,15 @@
 import {useEffect} from "react";
+import {Link} from "react-router-dom";
 import Brand from "../components/Brand.jsx";
 import Slideshow from "../components/Slideshow.jsx";
 import About from "./About.jsx";
-import Portfolio from "./Portfolio.jsx";
 import Testimonials from "./Testimonials.jsx";
 import Contact from "./Contact.jsx";
 
-// The whole site is this one scrolling page; the nav links are anchors to
-// these section ids.
+// The home page scrolls through these sections; the nav links are anchors to
+// their ids. Portfolio is its own page (see App.jsx).
 const sections = [
     {id: "about", Page: About},
-    {id: "portfolio", Page: Portfolio},
     {id: "testimonials", Page: Testimonials},
     {id: "contact", Page: Contact},
 ];
@@ -32,9 +31,9 @@ export default function Home() {
                         Light, airy, and happy photography — celebrating the little moments
                         that make up a life well lived.
                     </p>
-                    <a href="#portfolio" className="btn">
+                    <Link to="/portfolio" className="btn">
                         View the portfolio
-                    </a>
+                    </Link>
                 </div>
             </section>
 
